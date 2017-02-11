@@ -1,13 +1,10 @@
 import java.util.Scanner;
 
-public class MyTest {
+public class Test {
        public static void main(String[] args){
-       
               System.out.println("Enter a Number:");
-              Scanner Kbd = new Scanner(System.in);
-              int number = kbd.getInt();
+              Scanner kbd = new Scanner(System.in);
+              int number = kbd.nextInt();
               System.out.println(number);
-
-
        }
 }
