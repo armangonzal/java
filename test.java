@@ -11,6 +11,8 @@ public class Test {
               int number = kbd.nextInt() * 2;
               System.out.println(number);
               
+              System.out.println("Armando");
+              
 
 
 
