@@ -1,8 +1,8 @@
 public class Main {
 
   public static void main(String[] args) {
-    mixpaint(true, false, true);
-    mixpaint(true, true);
+    mixpaint(true, true, true);
+    mixpaint(false, true);
     mixpaint(true);
   }
   
