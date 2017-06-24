@@ -2,16 +2,52 @@ import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
-    userpaint();
-    mixpaint(true, true, true);
-    mixpaint(false, true);
-    mixpaint(true);
+    askforpaint();
+    //mixpaint(true, true, true); 
   }
 
-  public static void userpaint(){
-    System.out.println("Enter your paint: ");
+  public static void askforpaint(){
+    boolean redpaint = askforcolor("red");
+    
+    System.out.println("More Paint? y/n:");
+    Scanner sc1 = new Scanner(System.in);
+    String morepaint1 = sc1.nextLine();
+
+    if (checkanswer(morepaint1)){
+      boolean bluepaint = askforcolor("blue");
+    } else {
+      System.out.println("Okay no more paint");
+    }
+
+
+  }
+
+public static boolean askforcolor(String color){
+  System.out.println("Do you want " + color + " paint? y/n:");
     Scanner sc = new Scanner(System.in);
-    String userchoice = sc.nextLine();
+    String coloranswer = sc.nextLine();
+    if (acceptanswer(coloranswer)){
+      return checkanswer(coloranswer);
+    } else {
+      return false;
+    }
+}  
+
+public static boolean acceptanswer(String answer){
+  if (answer == "y" || answer == "n"){
+    return true;
+  } else {
+    return false;
+  }
+}
+
+  public static boolean checkanswer(String answer){
+    if(answer == "y"){
+      return true;
+    } else {
+      System.out.println("Your answer is false: " + answer);
+      return false;
+    }
   }
 
   public static void mixpaint(boolean red, boolean blue, boolean yellow){
