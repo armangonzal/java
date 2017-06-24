@@ -1,11 +1,18 @@
+import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
+    userpaint();
     mixpaint(true, true, true);
     mixpaint(false, true);
     mixpaint(true);
   }
-  
+
+  public static void userpaint(){
+    System.out.println("Enter your paint: ");
+    Scanner sc = new Scanner(System.in);
+    String userchoice = sc.nextLine();
+  }
 
   public static void mixpaint(boolean red, boolean blue, boolean yellow){
     if(red && blue && yellow) {
