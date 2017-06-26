@@ -3,7 +3,6 @@ public class Main {
 
   public static void main(String[] args) {
     askforpaint();
-    //mixpaint(true, true, true); 
   }
 
   public static void askforpaint(){
@@ -16,14 +15,15 @@ public class Main {
     if(sc1.hasNextInt()) { 
       morepaint1 = sc1.nextInt();
       if (checkanswer(morepaint1)){
-         boolean bluepaint = askforcolor("blue");
+        boolean bluepaint = askforcolor("blue");
         System.out.println("More Paint? Enter:\n0: no\n1: yes");
+        
         Scanner sc2 = new Scanner(System.in);
         int morepaint2;
 
         if(sc2.hasNextInt()) { 
           morepaint2 = sc2.nextInt();
-          if (checkanswer(morepaint1)){
+          if (checkanswer(morepaint2)){
             boolean yellowpaint = askforcolor("yellow");
             mixpaint(redpaint, bluepaint, yellowpaint);
           } else {
@@ -36,9 +36,6 @@ public class Main {
         mixpaint(redpaint);
       }
     }
-
-
-
 
   }
 
@@ -70,7 +67,6 @@ public static boolean acceptanswer(int answer){
     if(answer == 1){
       return true;
     } else {
-      System.out.println("Your answer is false: " + answer);
       return false;
     }
   }
