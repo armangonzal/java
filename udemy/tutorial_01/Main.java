@@ -1,8 +1,38 @@
 import java.util.Scanner;
 public class Main {
 
+  String[] colorlist = {"red", "blue", "yellow"};
+  boolean[] usedcolorlist = {false, false, false};
+
   public static void main(String[] args) {
-    askforpaint();
+    askforpaintloop();
+  }
+
+  public static void askforpaintloop(){
+
+    boolean paintcolor;
+    Scanner sc;
+    int morepaint;
+
+    for(int i = 1; i < 3; i++ ){
+      usedcolorlist[i] = askforcolor(colorlist[i]); 
+
+      if(i < 2){
+        System.out.println("More Paint? Enter:\n0: no\n1: yes");
+        sc = new Scanner(System.in);
+      } 
+
+      if(sc.hasNextInt()) { 
+        morepaint = sc.nextInt();
+        if (checkanswer(morepaint)){
+          //continue
+        } else {
+          System.out.println("Okay no more paint");
+          mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
+        }
+      }
+
+    }
   }
 
   public static void askforpaint(){
@@ -38,6 +68,8 @@ public class Main {
     }
 
   }
+
+
 
 public static boolean askforcolor(String color){
   System.out.println("Do you want " + color + " paint? Enter:\n0: no\n1: yes");
