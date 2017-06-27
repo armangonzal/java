@@ -1,33 +1,36 @@
 import java.util.Scanner;
 public class Paint {
     public static void askforpaint(){
-    String[] colorlist = {"red", "blue", "yellow"};
-    boolean[] usedcolorlist = {false, false, false};
-    boolean paintcolor;
-    int morepaint;
+        String[] colorlist = {"red", "blue", "yellow"};
+        boolean[] usedcolorlist = {false, false, false};
+        boolean paintcolor;
+        int morepaint;
 
-    outerloop:
-    for(int i = 0; i < 3; i++ ){
-      usedcolorlist[i] = askforcolor(colorlist[i]); 
-      if(i < 2){
-        System.out.println("More Paint? Enter:\n0: no\n1: yes");
-        Scanner sc = new Scanner(System.in);
-          if(sc.hasNextInt()) { 
-            morepaint = sc.nextInt();
-          if (checkanswer(morepaint)){
-            //continue
-          } else {
-            System.out.println("Okay no more paint");
-            mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
-            break outerloop;
-          }
+        outerloop:
+        for(int i = 0; i < 3; i++ ){
+            usedcolorlist[i] = askforcolor(colorlist[i]); 
+            if(i < 2){
+                System.out.println("More Paint? Enter:\n0: no\n1: yes");
+                Scanner sc = new Scanner(System.in);
+                if(sc.hasNextInt()) { 
+                    morepaint = sc.nextInt();
+                    if (checkanswer(morepaint)){
+                        //continue
+                    } else {
+                        System.out.println("Okay no more paint");
+                        mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
+                        break outerloop;
+                    }
+                } else {
+                    System.out.println("Not a valid response.");
+                    break outerloop;
+                }
+            } else {
+                System.out.println("Okay no more paint");
+                mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
+            }
         }
-      } else {
-        System.out.println("Okay no more paint");
-        mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
-      }
     }
-  }
 
 public static boolean askforcolor(String color){
   System.out.println("Do you want " + color + " paint? Enter:\n0: no\n1: yes");
