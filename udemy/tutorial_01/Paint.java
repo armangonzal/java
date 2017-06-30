@@ -8,11 +8,11 @@ public class Paint {
 
         outerloop:
         for(int i = 0; i < 3; i++ ){
-            usedcolorlist[i] = askforcolor(colorlist[i]); 
+            usedcolorlist[i] = askforcolor(colorlist[i]);
             if(i < 2){
-                System.out.println("More Paint? Enter:\n0: no\n1: yes");
+                System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
                 Scanner sc = new Scanner(System.in);
-                if(sc.hasNextInt()) { 
+                if(sc.hasNextInt()) {
                     morepaint = sc.nextInt();
                     if (checkanswer(morepaint)){
                         //continue
@@ -46,7 +46,7 @@ public static boolean askforcolor(String color){
     } else {
       return false;
     }
-}  
+}
 
 public static boolean acceptanswer(int answer){
   if (answer == 1 || answer == 0){
@@ -67,7 +67,7 @@ public static boolean acceptanswer(int answer){
   public static void mixpaint(boolean red, boolean blue, boolean yellow){
     if(red && blue && yellow) {
       System.out.println("Your final color is Black");
-    } 
+    }
     else if (red && blue && yellow == false){
       System.out.println("Your final color is Violet");
     }
@@ -116,4 +116,3 @@ public static boolean acceptanswer(int answer){
   }
 
 }
-
