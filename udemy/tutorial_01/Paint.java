@@ -23,7 +23,7 @@ public class Paint {
                     }
                 } else {
                     System.out.println("Not a valid response.");
-                    break outerloop;
+                    i -= 1;
                 }
             } else {
                 System.out.println("Okay no more paint");
