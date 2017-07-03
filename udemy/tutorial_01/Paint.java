@@ -12,7 +12,7 @@ public class Paint {
             if(i < 2){
                 System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
                 Scanner sc = new Scanner(System.in);
-                if(sc.hasNextInt()) {
+                if(sc.hasNextInt() && acceptanswer(sc.nextInt())) {
                     morepaint = sc.nextInt();
                     if (checkanswer(morepaint)){
                         //continue
