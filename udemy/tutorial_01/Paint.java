@@ -22,8 +22,8 @@ public class Paint {
                         break outerloop;
                     }
                 } else {
-                    System.out.println("Not a valid response.");
-                    i -= 1;
+                    System.out.println("Not a valid response. We're done here.");
+                    break outerloop;
                 }
             } else {
                 System.out.println("Okay no more paint");
@@ -33,18 +33,20 @@ public class Paint {
     }
 
 public static boolean askforcolor(String color){
-  System.out.println("Do you want " + color + " paint? Enter:\n0: no\n1: yes");
-    Scanner sc = new Scanner(System.in);
+    System.out.println("Do you want " + color + " paint? Enter:\n0: no\n1: yes");
+    Scanner sc1 = new Scanner(System.in);
     int coloranswer;
-    if(sc.hasNextInt()) {
-      coloranswer = sc.nextInt();
-      if (acceptanswer(coloranswer)){
-        return checkanswer(coloranswer);
-      } else {
-          return false;
-      }
+    if(sc1.hasNextInt()) {
+        coloranswer = sc1.nextInt();
+        if (acceptanswer(coloranswer)){
+          return checkanswer(coloranswer);
+        } else {
+            System.out.println("Not a valid integer. I guess you don't want "+color+" paint.");
+            return false;
+        }
     } else {
-      return false;
+        System.out.println("Not a valid response. I guess you don't want "+color+" paint.");
+        return false;
     }
 }
 
