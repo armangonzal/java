@@ -12,12 +12,18 @@ public class Paint {
             if(i < 2){
                 System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
                 Scanner sc = new Scanner(System.in);
-                if(sc.hasNextInt() && acceptanswer(sc.nextInt())) {
+                if(sc.hasNextInt()) {
                     morepaint = sc.nextInt();
-                    if (checkanswer(morepaint)){
-                        //continue
+                    if(acceptanswer(morepaint)) {
+                        if (checkanswer(morepaint)){
+                            //continue
+                        } else {
+                            System.out.println("Okay no more paint");
+                            mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
+                            break outerloop;
+                        }
                     } else {
-                        System.out.println("Okay no more paint");
+                        System.out.println("Not a valid response. Guess no more paint.");
                         mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
                         break outerloop;
                     }
