@@ -7,13 +7,10 @@ public class Paint {
         int morepaint;
 
         outerloop:
-        for(int i = 0; i < 3; i++ ){
+        for(int i = 0; i < 3; i++){
             usedcolorlist[i] = askforcolor(colorlist[i]);
             if(i < 2){
-                System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
-                Scanner sc = new Scanner(System.in);
-                if(sc.hasNextInt()) {
-                    morepaint = sc.nextInt();
+                    morepaint = askformorepaint();
                     if(acceptanswer(morepaint)) {
                         if (checkanswer(morepaint)){
                             //continue
@@ -27,10 +24,6 @@ public class Paint {
                         mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
                         break outerloop;
                     }
-                } else {
-                    System.out.println("Not a valid response. We're done here.");
-                    break outerloop;
-                }
             } else {
                 System.out.println("Okay no more paint");
                 mixpaint(usedcolorlist[0], usedcolorlist[1], usedcolorlist[2]);
@@ -53,6 +46,17 @@ public static boolean askforcolor(String color){
     } else {
         System.out.println("Not a valid response. I guess you don't want "+color+" paint.");
         return false;
+    }
+}
+
+public static int askformorepaint(){
+    System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
+    Scanner sc = new Scanner(System.in);
+    if(sc.hasNextInt()) {
+      return sc.nextInt();
+    } else {
+      System.out.println("Not a valid response. Maybe you meant 0?");
+      return 0;
     }
 }
 
