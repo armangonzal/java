@@ -99,7 +99,7 @@ public static boolean acceptanswer(int answer){
       System.out.println("Your final color is Blue");
     }
     else {
-      System.out.println("No paint!");
+      System.out.println("You used no paint!");
     }
   }
 
@@ -114,7 +114,7 @@ public static boolean acceptanswer(int answer){
       System.out.println("Your final color is Blue");
     }
     else {
-      System.out.println("No paint!");
+      System.out.println("You used no paint!");
     }
   }
 
