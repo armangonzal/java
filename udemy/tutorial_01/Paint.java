@@ -31,42 +31,42 @@ public class Paint {
         }
     }
 
-public static boolean askforcolor(String color){
-    System.out.println("Do you want " + color + " paint? Enter:\n0: no\n1: yes");
-    Scanner sc1 = new Scanner(System.in);
-    int coloranswer;
-    if(sc1.hasNextInt()) {
-        coloranswer = sc1.nextInt();
-        if (acceptanswer(coloranswer)){
-          return checkanswer(coloranswer);
-        } else {
-            System.out.println("Not a valid integer. I guess you don't want "+color+" paint.");
-            return false;
-        }
-    } else {
-        System.out.println("Not a valid response. I guess you don't want "+color+" paint.");
-        return false;
-    }
-}
-
-public static int askformorepaint(){
-    System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
-    Scanner sc = new Scanner(System.in);
-    if(sc.hasNextInt()) {
-      return sc.nextInt();
-    } else {
-      System.out.println("Not a valid response. Maybe you meant 0?");
-      return 0;
-    }
-}
-
-public static boolean acceptanswer(int answer){
-  if (answer == 1 || answer == 0){
-    return true;
-  } else {
-    return false;
+  public static boolean askforcolor(String color){
+      System.out.println("Do you want " + color + " paint? Enter:\n0: no\n1: yes");
+      Scanner sc1 = new Scanner(System.in);
+      int coloranswer;
+      if(sc1.hasNextInt()) {
+          coloranswer = sc1.nextInt();
+          if (acceptanswer(coloranswer)){
+            return checkanswer(coloranswer);
+          } else {
+              System.out.println("Not a valid integer. I guess you don't want "+color+" paint.");
+              return false;
+          }
+      } else {
+          System.out.println("Not a valid response. I guess you don't want "+color+" paint.");
+          return false;
+      }
   }
-}
+
+  public static int askformorepaint(){
+      System.out.println("Do you wan more Paint? Enter:\n0: no\n1: yes");
+      Scanner sc = new Scanner(System.in);
+      if(sc.hasNextInt()) {
+        return sc.nextInt();
+      } else {
+        System.out.println("Not a valid response. Maybe you meant 0?");
+        return 0;
+      }
+  }
+
+  public static boolean acceptanswer(int answer){
+    if (answer == 1 || answer == 0){
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   public static boolean checkanswer(int answer){
     if(answer == 1){
