@@ -3,7 +3,12 @@ import java.util.Scanner;
 public class Tone {
 
   public static void askforTone(){
-    System.out.println("What tone do you want?")
+    int toneVal;
+
+    System.out.println("What tone do you want?");
     Scanner sc1 = new Scanner(System.in);
+    if(sc1.hasNextInt()){
+      toneVal = sc1.nextInt();
+    }
   }
 }
