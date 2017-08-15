@@ -4,6 +4,7 @@ public class Tone {
 
   public static void askforTone(){
     int toneVal;
+    String[] valList = {"white", "light", "gray", "dark", "black"};
 
     System.out.println("What tone do you want?");
     Scanner sc1 = new Scanner(System.in);
