@@ -10,6 +10,12 @@ public class Tone {
     Scanner sc1 = new Scanner(System.in);
     if(sc1.hasNextInt()){
       toneVal = sc1.nextInt();
+      if(toneVal <= 4){
+         
+      } else {
+
+      }
     }
   }
+
 }
