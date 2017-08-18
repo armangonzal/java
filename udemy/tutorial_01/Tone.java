@@ -11,9 +11,9 @@ public class Tone {
     if(sc1.hasNextInt()){
       toneVal = sc1.nextInt();
       if(toneVal <= 4){
-         
+         System.out.println("Acceptable tone value.");
       } else {
-
+        System.out.println("Not an acceptable tone value.");
       }
     }
   }
