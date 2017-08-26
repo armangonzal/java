@@ -3,8 +3,9 @@ public class Color {
   int hue = 0;
   int saturation;
   int gray;
+  int tone;
 
-  public static String idColor(int hue){
+  public static String idHue(int hue){
     int i = hue/10;
     switch(i) {
       case 0:
@@ -24,4 +25,10 @@ public class Color {
     }
 
   }
+
+  public static int idTone(int saturation, int gray, int tone){
+      tone = saturation * gray;
+      return tone;
+  }
+
 }
