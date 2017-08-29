@@ -6,7 +6,7 @@ public class Main {
     Paint paint01 = new Paint();
     Color testcolor = new Color();
 
-
+    testcolor.askforRGB(testcolor.red, testcolor.green, testcolor.blue);
 
     //paint01.askforpaint();
   }
