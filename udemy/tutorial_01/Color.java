@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
 public class Color {
-
-   int red = 0;
-   int green = 0;
-   int blue = 0;
+   private int red = 0;
+   private int green = 0;
+   private int blue = 0;
 
   public static int askforcolor(String name){
     int color = 0;
@@ -13,24 +12,24 @@ public class Color {
     if(scColor.hasNextInt()){
         color = scColor.nextInt();
         if(color >= 0 && color <= 15){
+          return color;
         } else {
           System.out.println("Please enter a value from 0 to 15.");
-          askforcolor(name);
+          return askforcolor(name);
         }
     } else {
       System.out.println("Not an acceptable value.");
-      askforcolor(name);
+      return askforcolor(name);
     }
-    return color;
   }
 
-  public static void askforRGB(int red, int green, int blue){
+  public void askforRGB(){
     red = askforcolor("red");
     green = askforcolor("green");
     blue = askforcolor("blue");
   }
 
-  public static void idHue(int red, int green, int blue){
+  public void idHue(){
     String hexR = Integer.toHexString(red);
     String hexG = Integer.toHexString(green);
     String hexB = Integer.toHexString(blue);
