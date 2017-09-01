@@ -7,14 +7,14 @@ public class Color {
 
   public static int askforcolor(String name){
     int color = 0;
-    System.out.println("Enter a value for " + name + " from 0 to 15:");
+    System.out.println("Enter a value for " + name + " from 0 to 255:");
     Scanner scColor = new Scanner(System.in);
     if(scColor.hasNextInt()){
         color = scColor.nextInt();
-        if(color >= 0 && color <= 15){
+        if(color >= 0 && color <= 255){
           return color;
         } else {
-          System.out.println("Please enter a value from 0 to 15.");
+          System.out.println("Please enter a value from 0 to 255.");
           return askforcolor(name);
         }
     } else {
