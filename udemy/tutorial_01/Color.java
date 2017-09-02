@@ -31,17 +31,26 @@ public class Color {
   }
 
   public void idHue(){
-    String hexR = Integer.toHexString(red);
-    String hexG = Integer.toHexString(green);
-    String hexB = Integer.toHexString(blue);
+    int colorlist[] = {red, green, blue};
+    String hexlist[] = new String[3];
 
-    System.out.println("Your hex color is: #" + hexR + hexG + hexB);
+    for (int i = 0; i < colorlist.length; i++){
+      if (colorlist[i] < 16) {
+        hexlist[i] = "0" + Integer.toHexString(colorlist[i]);
+      }
+      else {
+        hexlist[i] = Integer.toHexString(colorlist[i]);
+      }
+    }
+    
+    System.out.println("Your hex color is: #" + hexlist[0] + hexlist[1] + hexlist[2]);
   }
 
   public void idTone(){
     tone = (red+green+blue)/3;
+    String hexTone = Integer.toHexString(tone);
 
-    System.out.println("Your tone value is: " + tone);
+    System.out.println("Your tone scale value is: #" + hexTone);
 
   }
 }
