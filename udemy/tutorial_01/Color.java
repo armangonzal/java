@@ -4,6 +4,7 @@ public class Color {
    private int red = 0;
    private int green = 0;
    private int blue = 0;
+   private int tone = 0;
 
   public static int askforcolor(String name){
     int color = 0;
@@ -35,5 +36,12 @@ public class Color {
     String hexB = Integer.toHexString(blue);
 
     System.out.println("Your hex color is: #" + hexR + hexG + hexB);
+  }
+
+  public void idTone(){
+    tone = (red+green+blue)/3;
+
+    System.out.println("Your tone value is: " + tone);
+
   }
 }

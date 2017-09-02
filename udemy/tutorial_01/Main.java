@@ -8,6 +8,7 @@ public class Main {
 
     testcolor.askforRGB();
     testcolor.idHue();
+    testcolor.idTone();
 
     //paint01.askforpaint();
   }
