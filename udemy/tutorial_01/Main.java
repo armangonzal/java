@@ -7,8 +7,9 @@ public class Main {
     Color testcolor = new Color();
 
     testcolor.askforRGB();
-    testcolor.idHue();
+    testcolor.idColor();
     testcolor.idTone();
+    testcolor.sortColors();
 
     //paint01.askforpaint();
   }
