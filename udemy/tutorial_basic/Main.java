@@ -1,19 +1,14 @@
 public class Main {
   public static void main(String[] args) {
 
-    char myChar = '\u00A9';
+    double firstNum = 20;
+    double secondNum = 80;
 
-    String myString = "\u00A9 symbol";
+    double product = (firstNum + secondNum) * 25;
 
-    System.out.println(myString);
+    int remainder = (int) product % 40;
 
-    boolean isP = true;
-
-    boolean wasP = isP ? true : false;
-
-    if(wasP){
-      System.out.println("Was P!!!");
-    }
+    System.out.println(remainder);
 
   }
 }

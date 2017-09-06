@@ -8,6 +8,20 @@ public class Color {
    private boolean lowest[] = {false, false, false};
    private boolean highest[] = {false, false, false};
 
+
+  public void nameColor(){
+    String colorName = "";
+    String colorlist[] = {"red", "green", "blue"};
+    for(int i = 0; i < 3; i++){
+      if(highest[i]){
+        colorName = colorlist[i] + " " + colorName;
+      } else if (highest[i] == false && lowest[i] == false) {
+        colorName += " " + colorlist[i];
+      }
+    }
+    System.out.println(colorName);
+  }
+
   public static int askforcolor(String name){
     int color = 0;
     System.out.println("Enter a value for " + name + " from 0 to 255:");

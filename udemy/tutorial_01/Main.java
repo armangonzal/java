@@ -10,6 +10,7 @@ public class Main {
     testcolor.idColor();
     testcolor.idTone();
     testcolor.sortColors();
+    testcolor.nameColor();
 
     //paint01.askforpaint();
   }
