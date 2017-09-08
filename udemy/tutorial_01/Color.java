@@ -5,14 +5,9 @@ public class Color {
    private int green = 0;
    private int blue = 0;
    private int tone = 0;
-   private boolean lowest[] = {false, false, false};
-   private boolean highest[] = {false, false, false};
-
+   private String colorName = "black";
 
   public void nameColor(){
-    String colorName = "";
-    String colorlist[] = {"red", "green", "blue"};
-
     if(red == green && red == blue && green == blue){
       if(red == 0){
         colorName = "black";
@@ -44,7 +39,7 @@ public class Color {
       }
     }
 
-    System.out.println(colorName);
+    System.out.println("The name of your color is " + colorName + ".");
   }
 
   public static int askforcolor(String name){
@@ -71,34 +66,6 @@ public class Color {
     blue = askforcolor("blue");
   }
 
-  public void sortColors(){
-    int colorlist[] = {red, green, blue};
-
-    for(int i = 0; i < 3; i++){
-      for(int j = 0; j < 3; j++){
-        lowest[i] = true;
-        if (i != j && colorlist[i] >= colorlist[j]){
-            lowest[i] = false;
-            break;
-        }
-      }
-    }
-
-    for(int k = 0; k < 3; k++){
-      for(int l = 0; l < 3; l++){
-        highest[k] = true;
-        if (k != l && colorlist[k] <= colorlist[l]){
-            highest[k] = false;
-            break;
-        }
-      }
-    }
-
-    System.out.println("highest: " + highest[0] + ", " + highest[1] + ", " + highest[2]);
-    System.out.println("lowest: " + lowest[0] + ", " + lowest[1] + ", " + lowest[2]);
-
-  }
-
   public void idColor(){
     int colorlist[] = {red, green, blue};
     String hexlist[] = new String[3];
@@ -120,6 +87,5 @@ public class Color {
     String hexTone = Integer.toHexString(tone);
 
     System.out.println("Your tone scale value is: #" + hexTone);
-
   }
 }

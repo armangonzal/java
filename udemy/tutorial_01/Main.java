@@ -9,7 +9,6 @@ public class Main {
     testcolor.askforRGB();
     testcolor.idColor();
     testcolor.idTone();
-    testcolor.sortColors();
     testcolor.nameColor();
 
     //paint01.askforpaint();
