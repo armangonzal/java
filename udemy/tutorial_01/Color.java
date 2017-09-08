@@ -12,13 +12,38 @@ public class Color {
   public void nameColor(){
     String colorName = "";
     String colorlist[] = {"red", "green", "blue"};
-    for(int i = 0; i < 3; i++){
-      if(highest[i]){
-        colorName = colorlist[i] + " " + colorName;
-      } else if (highest[i] == false && lowest[i] == false) {
-        colorName += " " + colorlist[i];
+
+    if(red == green && red == blue && green == blue){
+      if(red == 0){
+        colorName = "black";
+      } else if(red == 255){
+        colorName = "white";
+      } else {
+        colorName = "gray";
+      }
+    } else if(red > green && red > blue){
+      colorName = "red ";
+      if(blue > green){
+        colorName += "blue";
+      } else if (green > blue){
+        colorName += "green";
+      }
+    } else if(green > red && green > blue){
+      colorName = "green ";
+      if(blue > red){
+        colorName += "blue";
+      } else if (red > blue){
+        colorName += "red";
+      }
+    } else if(blue > green && blue > red){
+      colorName = "blue ";
+      if(red > green){
+        colorName += "red";
+      } else if (green > red){
+        colorName += "green";
       }
     }
+
     System.out.println(colorName);
   }
 
