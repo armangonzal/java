@@ -16,21 +16,21 @@ public class Color {
       } else {
         colorName = "gray";
       }
-    } else if(red > green && red > blue){
+    } else if(red >= green && red >= blue){
       colorName = "red ";
       if(blue > green){
         colorName += "blue";
       } else if (green > blue){
         colorName += "green";
       }
-    } else if(green > red && green > blue){
+    } else if(green >= red && green >= blue){
       colorName = "green ";
       if(blue > red){
         colorName += "blue";
       } else if (red > blue){
         colorName += "red";
       }
-    } else if(blue > green && blue > red){
+    } else if(blue >= green && blue >= red){
       colorName = "blue ";
       if(red > green){
         colorName += "red";
