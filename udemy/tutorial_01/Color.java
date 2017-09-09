@@ -21,7 +21,12 @@ public class Color {
       if(blue > green){
         colorName += "blue";
       } else if (green > blue){
-        colorName += "green";
+        if(red/2 > green){
+            colorName = "orange";
+        } else {
+          colorName = "yellow";
+        }
+        //colorName += "green";
       }
     } else if(green >= red && green >= blue){
       colorName = "green ";
