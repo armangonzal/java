@@ -1,11 +1,14 @@
 import java.util.Scanner;
+import java.awt.Color;
 
-public class Color {
+public class Colormade {
    private int red = 0;
    private int green = 0;
    private int blue = 0;
    private int tone = 0;
    private String colorName = "black";
+   Color colorPrime = new Color(red, green, blue);
+
 
   public void nameColor(){
     if(red == green && red == blue && green == blue){
@@ -21,12 +24,7 @@ public class Color {
       if(blue > green){
         colorName += "blue";
       } else if (green > blue){
-        if(red/2 > green){
-            colorName = "orange";
-        } else {
-          colorName = "yellow";
-        }
-        //colorName += "green";
+        colorName += "green";
       }
     } else if(green >= red && green >= blue){
       colorName = "green ";
@@ -85,6 +83,7 @@ public class Color {
     }
 
     System.out.println("Your hex color is: #" + hexlist[0] + hexlist[1] + hexlist[2]);
+    colorPrime = new Color(red, green, blue);
   }
 
   public void idTone(){
