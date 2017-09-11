@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.awt.Color;
 
-public class Colormade {
+public class ColorCreator {
    private int red = 0;
    private int green = 0;
    private int blue = 0;
@@ -11,6 +11,7 @@ public class Colormade {
 
 
   public void nameColor(){
+    double ratio = 1;
     if(red == green && red == blue && green == blue){
       if(red == 0){
         colorName = "black";
@@ -20,26 +21,51 @@ public class Colormade {
         colorName = "gray";
       }
     } else if(red >= green && red >= blue){
-      colorName = "red ";
-      if(blue > green){
-        colorName += "blue";
-      } else if (green > blue){
-        colorName += "green";
-      }
+        if(blue > green){
+            ratio = (double) (blue-green)/(red-green);
+            if (ratio < 0.5) {
+              colorName = "red";
+            } else {
+              colorName = "violet";
+            }
+        } else if (green > blue){
+            ratio = (double) (green-blue)/(red-blue);
+            if (ratio < 0.25) {
+              colorName = "red";
+            } else if (ratio >= 0.25 && ratio < 0.75) {
+              colorName = "orange";
+            } else {
+              colorName = "yellow";
+            }
+        } else {
+            colorName = "red";
+        }
     } else if(green >= red && green >= blue){
-      colorName = "green ";
-      if(blue > red){
-        colorName += "blue";
-      } else if (red > blue){
-        colorName += "red";
-      }
+        if(blue > red){
+            colorName = "green";
+        } else if (red > blue){
+          ratio = (double) (red-blue)/(green-blue);
+          if (ratio < 0.5) {
+            colorName = "green";
+          } else {
+            colorName = "yellow";
+          }
+        } else {
+            colorName = "green";
+        }
     } else if(blue >= green && blue >= red){
-      colorName = "blue ";
-      if(red > green){
-        colorName += "red";
-      } else if (green > red){
-        colorName += "green";
-      }
+        if(red > green){
+            ratio = (double) (red-green)/(blue-green);
+            if (ratio < 0.5) {
+              colorName = "blue";
+            } else {
+              colorName = "violet";
+            }
+        } else if (green > red){
+            colorName = "blue";
+        } else {
+            colorName = "blue";
+        }
     }
 
     System.out.println("The name of your color is " + colorName + ".");
