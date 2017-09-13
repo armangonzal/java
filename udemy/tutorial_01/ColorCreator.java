@@ -2,11 +2,11 @@ import java.util.Scanner;
 import java.awt.Color;
 
 public class ColorCreator {
-   private int red = 0;
-   private int green = 0;
-   private int blue = 0;
-   private int tone = 0;
-   private String colorName = "black";
+   int red = 0;
+   int green = 0;
+   int blue = 0;
+   int tone = 0;
+   String colorName = "black";
    Color colorPrime = new Color(red, green, blue);
 
    public void askforRGB(){
