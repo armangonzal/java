@@ -14,7 +14,7 @@ public class DrawColor extends JComponent{
 
       Color colorChosen = new Color(testcolor.red, testcolor.green, testcolor.blue);
       g2.setColor(colorChosen);
-      Rectangle rect = new Rectangle(270, 190, 100, 100);
+      Rectangle rect = new Rectangle(270, 190, 400, 400);
       g2.fill(rect);
   }
 }
