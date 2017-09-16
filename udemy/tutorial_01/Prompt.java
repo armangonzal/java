@@ -12,13 +12,18 @@ public class Prompt {
     int answer = a1.nextInt();
 
     if(answer == 1){
-      DrawColor dc = new DrawColor();
-      JFrame window = new JFrame();
-      window.setSize(640, 480);
-      window.setTitle("Color Window");
-      window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      window.setVisible(true);
-      window.add(dc);
+      ColorDrawing dc = new ColorDrawing();
+      dc.drawColor();
+
+      if(dc.colorComplete == true){
+        JFrame window = new JFrame();
+        window.setSize(640, 480);
+        window.setTitle("Color Window");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setVisible(true);
+        window.add(dc);
+      }
+
     } else if (answer == 2){
       System.out.println("Okay no color.");
     } else {
