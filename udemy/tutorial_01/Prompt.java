@@ -23,16 +23,12 @@ public class Prompt {
         window.setVisible(true);
         window.add(dc);
       }
-
     } else if (answer == 2){
       System.out.println("Okay no color.");
     } else {
       System.out.println("Not a valid answer. ");
       askforwindow();
     }
-
-
   }
-
 
 }

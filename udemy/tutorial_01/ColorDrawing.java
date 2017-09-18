@@ -8,8 +8,6 @@ public class ColorDrawing extends JComponent{
   boolean colorComplete = false;
   ColorCreator testcolor = new ColorCreator();
 
-
-
   public void drawColor(){
     testcolor.askforRGB();
     colorComplete = true;
@@ -20,7 +18,7 @@ public class ColorDrawing extends JComponent{
     Graphics2D g2 = (Graphics2D) g;
     Color colorChosen = new Color(testcolor.red, testcolor.green, testcolor.blue);
     g2.setColor(colorChosen);
-    Rectangle rect = new Rectangle(270, 190, 100, 100);
+    Rectangle rect = new Rectangle(220, 140, 200, 200);
     g2.fill(rect);
   }
 }
