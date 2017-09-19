@@ -1,33 +1,14 @@
-import com.sun.j3d.utils.universe.SimpleUniverse;
+import java.applet.Applet;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
 
-import com.sun.j3d.utils.geometry.ColorCube;
+public class Main{
 
-import javax.media.j3d.BranchGroup;
+  public static void main(String[] args){
+    //Hello3d homeImage = new Hello3d();
+    //homeImage.paint();
+  }
 
-public class Hello3d {
-
-public Hello3d()
-
-{
-
-   SimpleUniverse universe = new SimpleUniverse();
-
-   BranchGroup group = new BranchGroup();
-
-   group.addChild(new ColorCube(0.3));
-
-   universe.getViewingPlatform().setNominalViewingTransform();
-
-   universe.addBranchGraph(group);
 
 }
-
-public static void main( String[] args ) {
-
-   System.setProperty("sun.awt.noerasebackground", "true");
-
-   new Hello3d();
-
-}
-
-} // end of class Hello3d
