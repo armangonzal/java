@@ -1,4 +1,4 @@
-import java.applet.Applet;
+/*import java.applet.Applet;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -25,3 +25,4 @@ public class Hello3d extends Applet{
     return tempImage;
   }
 }
+*/
