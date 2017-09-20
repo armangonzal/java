@@ -22,6 +22,7 @@ public class ImageTutorial extends JFrame {
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gui.setVisible(true);
         gui.pack();
+        //gui.setSize(640, 480);
         gui.setTitle("Image Program");
     }
 }
