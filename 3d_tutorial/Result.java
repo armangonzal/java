@@ -9,24 +9,24 @@ public class Result extends JFrame{
   public Result(){
     setLayout(new FlowLayout());
 
-    label = new JLabel("");
-    add(label);
-
     button = new JButton("Click");
     add(button);
 
+    label = new JLabel("");
+    add(label);
+
     Event e = new Event();
     button.addActionListener(e);
+
   }
 
-
   public class Event implements ActionListener{
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed (ActionEvent e){
       label.setText("Hello");
     }
   }
 
-  public static void main(String args[]){
+  public static void main(String arg[]){
     Result gui = new Result();
     gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     gui.setTitle("Chub");
