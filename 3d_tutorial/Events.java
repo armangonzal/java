@@ -1,10 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-/*import javax.swing.JPanel;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JButton;*/
 
 public class Events extends JFrame {
     private JLabel label1;
