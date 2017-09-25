@@ -17,12 +17,15 @@ public class ImageProcessor extends JFrame{
     JLabel label;
     JButton button;
     Book book1;
+    Novel novel1;
     boolean buttonOn = false;
     
     public ImageProcessor(){
         setLayout(new FlowLayout());
         
         book1 = new Book("Chubs", "Peanut", 2017, 20, "Hardcover");
+        novel1 = new Novel("The Important", "Ziggy", 2017, 100, "PaperBack", 5, 
+                "Nonfiction");
         
         button = new JButton("Click");
         add(button);
@@ -40,7 +43,7 @@ public class ImageProcessor extends JFrame{
     public class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
             if(!buttonOn){
-                label.setText(book1.getTitle());
+                label.setText("\""+novel1.getTitle() + "\"" + " by " + novel1.getAuthor());
                 buttonOn = true;
             } else {
                 label.setText("");
