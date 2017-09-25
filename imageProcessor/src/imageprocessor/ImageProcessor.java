@@ -18,6 +18,7 @@ public class ImageProcessor extends JFrame{
     JButton button;
     Book book1;
     Novel novel1;
+    AcClarkeBook acBook1;
     boolean buttonOn = false;
     
     public ImageProcessor(){
@@ -26,6 +27,8 @@ public class ImageProcessor extends JFrame{
         book1 = new Book("Chubs", "Peanut", 2017, 20, "Hardcover");
         novel1 = new Novel("The Important", "Ziggy", 2017, 100, "PaperBack", 5, 
                 "Nonfiction");
+        acBook1 = new AcClarkeBook("Childhood's end", 2001, 200, "PaperBack", 15, 
+                "Child Series");
         
         button = new JButton("Click");
         add(button);
@@ -43,7 +46,8 @@ public class ImageProcessor extends JFrame{
     public class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
             if(!buttonOn){
-                label.setText("\""+novel1.getTitle() + "\"" + " by " + novel1.getAuthor());
+                label.setText("\""+acBook1.getTitle() + "\"" + " by " 
+                        + acBook1.getAuthor() + " in the series: " + acBook1.getSeries());
                 buttonOn = true;
             } else {
                 label.setText("");
