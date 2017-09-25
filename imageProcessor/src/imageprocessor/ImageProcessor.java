@@ -16,9 +16,13 @@ import javax.swing.*;
 public class ImageProcessor extends JFrame{
     JLabel label;
     JButton button;
+    Book book1;
+    boolean buttonOn = false;
     
     public ImageProcessor(){
         setLayout(new FlowLayout());
+        
+        book1 = new Book("Chubs", "Peanut", 2017, 20, "Hardcover");
         
         button = new JButton("Click");
         add(button);
@@ -33,19 +37,26 @@ public class ImageProcessor extends JFrame{
     /**
      * @param args the command line arguments
      */
-    
     public class ButtonEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            label.setText("Hello");
+            if(!buttonOn){
+                label.setText(book1.getTitle());
+                buttonOn = true;
+            } else {
+                label.setText("");
+                buttonOn = false;
+            }
+            
         }
 }
+  
     
     public static void main(String args[]) {
         // TODO code application logic here
         ImageProcessor gui = new ImageProcessor();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setTitle("Chub Chubs");
-        gui.setSize(300, 600);
+        gui.setTitle("Chubby Chubs");
+        gui.setSize(600, 300);
         gui.setVisible(true);
         
     }  
