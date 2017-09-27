@@ -8,41 +8,51 @@ package javaapplication3;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
 /**
  *
  * @author MandoG
  */
 public class JavaApplication3 extends JFrame{
-    JButton button1;
-    JLabel label1;
-    /**
-     * @param args the command line arguments
-     */
+    JButton button01;
+    JLabel label01;
+    boolean click01 = false;
+    
     public JavaApplication3(){
         setLayout(new FlowLayout());
         
-        button1 = new JButton("Click");
-        add(button1);
+        button01 = new JButton("Click Here");
+        add(button01);
         
-        label1 = new JLabel("");
-        add(label1);
+        label01 = new JLabel("");
+        add(label01);
         
-        ButtonEvent1 e = new ButtonEvent1();
-        button1.addActionListener(e);  
+        ButtonEvent01 e1 = new ButtonEvent01();
+        button01.addActionListener(e1);
     }
     
-    public class ButtonEvent1 implements ActionListener{
+    /**
+     * @param args the command line arguments
+     */
+    public class ButtonEvent01 implements ActionListener{
         public void actionPerformed(ActionEvent e){
-            label1.setText("Hey");
+            if(!click01){
+                label01.setText("Hello");
+                click01 = true;
+            } else {
+                label01.setText("");
+                click01 = false;
+            }
+            
         }
-}
+    }
+    
+
     
     public static void main(String[] args) {
         // TODO code application logic here
         JavaApplication3 gui = new JavaApplication3();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setTitle("Chub");
+        gui.setTitle("Practice Window");
         gui.setSize(600, 300);
         gui.setVisible(true);
     }

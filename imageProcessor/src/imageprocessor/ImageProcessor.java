@@ -58,7 +58,7 @@ public class ImageProcessor extends JFrame{
 }
   
     
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // TODO code application logic here
         ImageProcessor gui = new ImageProcessor();
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
