@@ -10,16 +10,18 @@ package javaapplication3;
  * @author MandoG
  */
 public class Creature {
-    int intel;
-    boolean awake;
-    //Head myHead;
-
-    public Creature(int intel, boolean awake) {
-        this.intel = intel;
-        this.awake = awake;
+    Head head;
+    Legs legs;
+    
+    public Creature(Head head, Legs legs) {
+        this.head = head;
+        this.legs = legs;
     }
     
-    Head myHead = new Head(intel, awake);
+
+    
+    
+    
             
     
     

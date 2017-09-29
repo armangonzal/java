@@ -10,5 +10,29 @@ package javaapplication3;
  * @author MandoG
  */
 public class Legs {
+    private int number;
+    private int speed;
+
+    public Legs(int number, int speed) {
+        this.number = number;
+        this.speed = speed;
+    }
+    
+    public void run(){
+        System.out.println("The creature is running at " + speed);
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    
+    
+    
+    
     
 }

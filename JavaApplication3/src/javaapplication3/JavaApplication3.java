@@ -16,6 +16,10 @@ public class JavaApplication3 extends JFrame{
     JButton button01;
     JLabel label01;
     boolean click01 = false;
+    Head head = new Head(7, true);
+    Legs legs = new Legs(9, 4);
+    Creature creature = new Creature(head, legs);
+    
     
     public JavaApplication3(){
         setLayout(new FlowLayout());
@@ -37,6 +41,8 @@ public class JavaApplication3 extends JFrame{
         public void actionPerformed(ActionEvent e){
             if(!click01){
                 label01.setText("Hello");
+                creature.legs.run();
+                creature.head.speak();
                 click01 = true;
             } else {
                 label01.setText("");
