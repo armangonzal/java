@@ -18,8 +18,9 @@ public class Legs {
         this.speed = speed;
     }
     
-    public void run(){
-        System.out.println("The creature is running at " + speed);
+    public int run(){
+        //System.out.println("The creature is running at " + speed);
+        return speed;
     }
 
     public int getNumber() {

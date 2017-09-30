@@ -19,13 +19,15 @@ public class Head {
         this.awake = awake;
     }
     
-    public void speak(){
+    public String speak(){
         if(awake && intel > 4){
             System.out.println("I can talk.");
+            return "I can talk";
         } else if (awake && intel < 5){
-            System.out.println("Grrr");
+            return "Grrr";
         } else {
             System.out.println("Zzzzz");
+            return "Zzzzz";
         }
     }
 
