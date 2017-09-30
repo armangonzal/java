@@ -22,6 +22,9 @@ public class JavaApplication3 extends JFrame{
     Head head = new Head(4, true);
     Legs legs = new Legs(9, 4);
     Creature creature = new Creature(head, legs);
+    //int[] meals = new int[10];
+    int[] meals = {3,2,9,0,4,3,2,6,6,7};
+    
     
     
     public JavaApplication3(){
@@ -38,6 +41,8 @@ public class JavaApplication3 extends JFrame{
         
         moveLabel = new JLabel("");
         add(moveLabel);
+        
+        System.out.println(meals[4]);
         
         ButtonEvent01 e1 = new ButtonEvent01();
         button01.addActionListener(e1);
