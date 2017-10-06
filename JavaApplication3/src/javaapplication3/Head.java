@@ -5,6 +5,8 @@
  */
 package javaapplication3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author MandoG
@@ -13,10 +15,17 @@ package javaapplication3;
 public class Head {
     int intel;
     boolean awake;
+    private ArrayList<String> thoughts = new ArrayList<String>();
 
     public Head(int intel, boolean awake) {
         this.intel = intel;
         this.awake = awake;
+    }
+    
+    public String think(){
+        thoughts.add("hungry");
+        thoughts.add("Excited");
+        return thoughts.get(1);
     }
     
     public String speak(){

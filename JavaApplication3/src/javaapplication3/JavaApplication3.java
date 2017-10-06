@@ -59,6 +59,7 @@ public class JavaApplication3 extends JFrame{
             if(!click01){
                 label01.setText(creature.head.speak());
                 click01 = true;
+                System.out.println(creature.head.think());
             } else {
                 label01.setText("");
                 click01 = false;
