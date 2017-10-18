@@ -8,6 +8,7 @@ package javaapplication3;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.util.Scanner;
 /**
  *
  * @author MandoG
@@ -24,6 +25,8 @@ public class JavaApplication3 extends JFrame{
     Creature creature = new Creature(head, legs);
     //int[] meals = new int[10];
     int[] meals = {3,2,9,0,4,3,2,6,6,7};
+    private static Scanner scanner = new Scanner(System.in);
+    private static MonsterList monsterList = new MonsterList();
     
     
     
@@ -87,6 +90,24 @@ public class JavaApplication3 extends JFrame{
         gui.setTitle("Practice Window");
         gui.setSize(600, 300);
         gui.setVisible(true);
+        
+        boolean quit = false;
+        int choice = 0;
+        //printInstructions();
+        while(!quit){
+            System.out.println("Enter your choice: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+            
+            switch(choice){
+                case 0:
+                    //print instructions;
+                    break;
+                case 1:
+                    monsterList.printMonsterList();
+                    break;
+            }
+        }
     }
     
 }
