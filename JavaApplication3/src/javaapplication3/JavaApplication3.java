@@ -73,6 +73,7 @@ public class JavaApplication3 extends JFrame{
     public class MoveBtnEvent implements ActionListener{
         public void actionPerformed(ActionEvent e){
             if(!moveClick){
+                creature.legs.incrSpeed();
                 moveLabel.setText("Creature is moving at speed of " + creature.legs.run());
                 moveClick = true;
             } else {

@@ -18,6 +18,10 @@ public class Legs {
         this.speed = speed;
     }
     
+    public void incrSpeed(){
+        this.speed+=1;
+    }
+    
     public int run(){
         //System.out.println("The creature is running at " + speed);
         return speed;
