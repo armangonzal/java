@@ -12,7 +12,7 @@ public class StrManip {
         
         int sumLen = A.length()+B.length();
         String grA = "Yes";
-        if(A.compareTo(B) < 0) grA = "No";
+        if(A.compareTo(B) <= 0) grA = "No";
         
         String capA = A.substring(0,1).toUpperCase() + A.substring(1,A.length());
         String capB = B.substring(0,1).toUpperCase() + B.substring(1,B.length());
