@@ -22,7 +22,8 @@ public class TagContentExtractor{
             
             while(m.find())
             {
-               String sub = line.replaceAll(m.group(), m.group(2));
+               String sub = m.group();
+               sub = sub.replaceAll(m.group(), m.group(2));
                System.out.println(sub);
             }
             //if(line.matches(regex)) System.out.println(line);
