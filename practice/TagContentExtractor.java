@@ -42,24 +42,19 @@ public class TagContentExtractor{
       
       //Pattern p = Pattern.compile(regex);
       //Matcher m = p.matcher(str);
+      m.reset();
       if(!m.find())System.out.println("None");
       else
       {
-         System.out.printf("whole: %s%n",m.group());
+         m.reset();
+         //System.out.printf("whole: %s%n",m.group());
          while(m.find())
          {
             //System.out.printf("sub before: %s%n",m.group());
             String sub = m.group(2);
-            //System.out.printf("sub after: %s%n",sub);
             Matcher m2 = p.matcher(sub);
-            if(m2.find())
-            {
-               matchTag(m2, p);
-            }
-            else
-            {
-               System.out.println(sub);
-            }   
+            if(m2.find()) matchTag(m2, p);
+            else System.out.println(sub);  
          }
       }           
    }
