@@ -20,16 +20,49 @@ public class TagContentExtractor{
             
             Matcher m = p.matcher(line);
             
-            while(m.find())
+            matchTag(m, p);
+            /*
+            if(!m.find())System.out.println("None");
+            else
             {
-               String sub = m.group();
-               sub = sub.replaceAll(m.group(), m.group(2));
-               System.out.println(sub);
-            }
-            //if(line.matches(regex)) System.out.println(line);
-            //else System.out.println("Invalid");
+            while(m.find())
+               {
+                  String sub = m.group();
+                  sub = sub.replaceAll(m.group(), m.group(2));
+                  System.out.println(sub);
+               }
+            }*/
 			
 			testCases--;
 		}
 	}
+   
+   public static void matchTag(Matcher m, Pattern p)
+   {
+      
+      //Pattern p = Pattern.compile(regex);
+      //Matcher m = p.matcher(str);
+      if(!m.find())System.out.println("None");
+      else
+      {
+         System.out.printf("whole: %s%n",m.group());
+         while(m.find())
+         {
+            //System.out.printf("sub before: %s%n",m.group());
+            String sub = m.group(2);
+            //System.out.printf("sub after: %s%n",sub);
+            Matcher m2 = p.matcher(sub);
+            if(m2.find())
+            {
+               matchTag(m2, p);
+            }
+            else
+            {
+               System.out.println(sub);
+            }   
+         }
+      }           
+   }
+   
+   
 }
