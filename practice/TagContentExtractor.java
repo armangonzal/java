@@ -37,10 +37,43 @@ public class TagContentExtractor{
             String sub = m.group(2);
             Matcher m2 = p.matcher(sub);
             if(m2.find()) matchTag(m2, p);
-            else System.out.println(sub);  
+            else
+            {
+               String regex3 = "[<](.+)[>](.*)[<][/](.+)[>]";           
+               Pattern p3 = Pattern.compile(regex3);            
+               Matcher m3 = p3.matcher(sub);
+               if(m3.find())System.out.println("None");
+               else System.out.println(sub);  
+            }
          }
       }           
    }
    
    
 }
+/*
+10
+<h1>some</h1>
+<h1>had<h1>public</h1></h1>
+<h1>had<h1>public</h1515></h1>
+<h1><h1></h1></h1>
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>
+<>hello</>
+<>hello</><h>dim</h>
+<>hello</><h>dim</h>>>>>
+*/
+
+/*
+some
+public
+None
+None
+None
+None
+None
+None
+dim
+dim
+*/
