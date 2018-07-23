@@ -14,7 +14,11 @@ public class TagContentExtractor{
 			
           	//Write your code here
             
-            String regex = "[<](.+)[>](.+)[<][/]\\1[>]";           
+            String regex = "[<](.+)[>](.+)[<][/]\\1[>]";
+            
+            String rgxHead = "[<](.+)[>]";
+            String rgxEnd = "[<][/](.+)[>]";   
+                   
             Pattern p = Pattern.compile(regex);            
             Matcher m = p.matcher(line);
             
