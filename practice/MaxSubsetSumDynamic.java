@@ -35,19 +35,32 @@ public class MaxSubsetSumDynamic {
                 }
                 
                 int cNum = locN-2;
-                int counter = cNum;
-                for(int pR=1; pR<=cNum-2; pR++)
+                int counter = cNum+1;
+                for(int pR=1; pR<=i-2; pR++)
                 {
                     int locN2 = pR+2;
 
                     int locLen2;
-                    if(pR==1) locLen2 = 1;
-                    else locLen2 = pR + (int)Math.pow(2, locN2-4);
-                    for(int c2=1; c2<=locLen2; c2++)
+                    if(pR==1) 
                     {
-                        counter++;  
-                        dArr[i][counter] = dArr[pR][c2]+arr[locN-1];
-                        if(dArr[i][counter] > max) max = dArr[i][counter];
+                         System.out.printf("i: %d, counter: %d, pR: %d%n", i, counter, pR);
+                         dArr[i][counter] = dArr[pR][1]+arr[locN-1];
+                         if(dArr[i][counter] > max) max = dArr[i][counter];
+                         counter++;
+                    }
+                    else 
+                    {
+                       locLen2 = pR + (int)Math.pow(2, locN2-4);
+                       
+                       for(int c2=1; c2<locLen2; c2++)
+                       {   
+                                                 
+                           System.out.printf("i: %d, counter: %d, pR: %d, c2: %d%n", i, counter, pR, c2);
+                           dArr[i][counter] = dArr[pR][c2]+arr[locN-1];
+                           if(dArr[i][counter] > max) max = dArr[i][counter];
+                           counter++;
+                           
+                       }
                     }
                 }
             }
@@ -72,7 +85,7 @@ public class MaxSubsetSumDynamic {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("inputGen.txt"));
 
         int n = scanner.nextInt();
         scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
