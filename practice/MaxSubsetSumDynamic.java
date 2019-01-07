@@ -16,50 +16,45 @@ public class MaxSubsetSumDynamic {
         int len = arr.length;
         if(len >= 3)
         {
-            int dArrLen = (len-2)+ (int)Math.pow(2, len-4);
-            int dArr[][] = new int[len-1][dArrLen];
+            int dArrLen = (len-2) + (int)Math.pow(2, len-4);
+            int dArr[][] = new int[len+1][dArrLen];
             int max = arr[0]+arr[2];
 
-            for(int i=1; i<len-1; i++)
+            for(int i=3; i<=len; i++)
             {
-                int locN = i+2;
-
                 int locLen;
-                if(i==1) locLen = 1;
-                else locLen = (locN-2)+(int)Math.pow(2, locN-4);
+                if(i==3) locLen = 1;
+                else locLen = (i-2)+(int)Math.pow(2, i-4);
 
-                for(int j=1; j<locN-1; j++)
+                for(int j=1; j<=i-2; j++)
                 {
-                    dArr[i][j] = arr[j-1]+arr[locN-1];
+                    dArr[i][j] = arr[j-1]+arr[i-1];
                     if (dArr[i][j] > max) max = dArr[i][j];
                 }
                 
-                int cNum = locN-2;
-                int counter = cNum+1;
-                for(int pR=1; pR<=i-2; pR++)
+                //int cNum = i-2;
+                //int counter = cNum+1;
+                int counter = i-1;
+                
+                for(int pR=3; pR<=i-2; pR++)//counting all previous rows except for the row i-1
                 {
-                    int locN2 = pR+2;
-
-                    int locLen2;
-                    if(pR==1) 
+                    if(pR==3) 
                     {
                          System.out.printf("i: %d, counter: %d, pR: %d%n", i, counter, pR);
-                         dArr[i][counter] = dArr[pR][1]+arr[locN-1];
+                         dArr[i][counter] = dArr[pR][1]+arr[i-1];
                          if(dArr[i][counter] > max) max = dArr[i][counter];
                          counter++;
                     }
                     else 
                     {
-                       locLen2 = pR + (int)Math.pow(2, locN2-4);
+                       int locLen2 = pR-2 + (int)Math.pow(2, pR-4);
                        
-                       for(int c2=1; c2<locLen2; c2++)
-                       {   
-                                                 
+                       for(int c2=1; c2<=locLen2-1; c2++)
+                       {                          
                            System.out.printf("i: %d, counter: %d, pR: %d, c2: %d%n", i, counter, pR, c2);
-                           dArr[i][counter] = dArr[pR][c2]+arr[locN-1];
+                           dArr[i][counter] = dArr[pR][c2]+arr[i-1];
                            if(dArr[i][counter] > max) max = dArr[i][counter];
-                           counter++;
-                           
+                           counter++;                           
                        }
                     }
                 }
