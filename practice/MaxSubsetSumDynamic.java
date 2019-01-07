@@ -13,68 +13,53 @@ public class MaxSubsetSumDynamic {
     // Complete the maxSubsetSum function below.
     static int maxSubsetSum(int[] arr) {
         
-        int len = arr.length;
-        if(len >= 3)
-        {
-            int dArrLen = (len-2) + (int)Math.pow(2, len-4);
-            int dArr[][] = new int[len+1][dArrLen];
-            int max = arr[0]+arr[2];
+         int len = arr.length;
+         int dArrLen = (len-2) + (int)Math.pow(2, len-4);
+         int dArr[][] = new int[len+1][dArrLen];
+         int max = arr[0]+arr[2];
 
-            for(int i=3; i<=len; i++)
+         for(int i=3; i<=len; i++)
+         {
+            int locLen;
+            if(i==3) locLen = 1;
+            else locLen = (i-2)+(int)Math.pow(2, i-4);
+
+            for(int j=1; j<=i-2; j++)
             {
-                int locLen;
-                if(i==3) locLen = 1;
-                else locLen = (i-2)+(int)Math.pow(2, i-4);
-
-                for(int j=1; j<=i-2; j++)
-                {
-                    dArr[i][j] = arr[j-1]+arr[i-1];
-                    if (dArr[i][j] > max) max = dArr[i][j];
-                }
+               dArr[i][j] = arr[j-1]+arr[i-1];
+               if (dArr[i][j] > max) max = dArr[i][j];
+            }
                 
-                //int cNum = i-2;
-                //int counter = cNum+1;
-                int counter = i-1;
+            int counter = i-1;
                 
-                for(int pR=3; pR<=i-2; pR++)//counting all previous rows except for the row i-1
-                {
-                    if(pR==3) 
-                    {
-                         System.out.printf("i: %d, counter: %d, pR: %d%n", i, counter, pR);
-                         dArr[i][counter] = dArr[pR][1]+arr[i-1];
-                         if(dArr[i][counter] > max) max = dArr[i][counter];
-                         counter++;
-                    }
-                    else 
-                    {
-                       int locLen2 = pR-2 + (int)Math.pow(2, pR-4);
+            for(int pR=3; pR<=i-2; pR++)//counting all previous rows except for the row i-1
+            {
+               if(pR==3) 
+               {
+                  //System.out.printf("i: %d, counter: %d, pR: %d%n", i, counter, pR);
+                  dArr[i][counter] = dArr[pR][1]+arr[i-1];
+                  if(dArr[i][counter] > max) max = dArr[i][counter];
+                  counter++;
+               }
+               else 
+               {
+                  int locLen2 = pR-2 + (int)Math.pow(2, pR-4);
                        
-                       for(int c2=1; c2<=locLen2-1; c2++)
-                       {                          
-                           System.out.printf("i: %d, counter: %d, pR: %d, c2: %d%n", i, counter, pR, c2);
-                           dArr[i][counter] = dArr[pR][c2]+arr[i-1];
-                           if(dArr[i][counter] > max) max = dArr[i][counter];
-                           counter++;                           
-                       }
-                    }
-                }
+                  for(int c2=1; c2<=locLen2-1; c2++)
+                  {                          
+                     //System.out.printf("i: %d, counter: %d, pR: %d, c2: %d%n", i, counter, pR, c2);
+                     dArr[i][counter] = dArr[pR][c2]+arr[i-1];
+                     if(dArr[i][counter] > max) max = dArr[i][counter];
+                     counter++;                           
+                  }
+               }
             }
-            for(int i=0; i<dArr.length; i++)
-            {
-                System.out.println(Arrays.toString(dArr[i]));
-            }
-            return max;
-        }
-        else 
-        {
-            int max = arr[0];
-            for(int i=0; i<arr.length; i++)
-            {
-                if(arr[i] > max) max = arr[i];
-            }
-            return max;
-        }       
-
+         }
+         for(int i=0; i<dArr.length; i++)
+         {
+            System.out.println(Arrays.toString(dArr[i]));
+         }
+         return max; 
     }
 
     private static final Scanner scanner = new Scanner(System.in);
